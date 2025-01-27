@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$LUIS Coin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #16a34a, #ffffff, #dc2626);
+            color: black;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+            position: relative;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .emoji-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .emoji {
+            font-size: 4rem;
+        }
+
+        .title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #16a34a, #ffffff, #dc2626);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #166534;
+            margin-bottom: 2rem;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .button {
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .button-green {
+            background-color: #16a34a;
+            color: white;
+        }
+
+        .button-green:hover {
+            background-color: #15803d;
+        }
+
+        .button-red {
+            background-color: #dc2626;
+            color: white;
+        }
+
+        .button-red:hover {
+            background-color: #b91c1c;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 2px solid #16a34a;
+            transition: background-color 0.3s;
+        }
+
+        .feature-card:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #166534;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: #991b1b;
+        }
+
+        .tokenomics {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .tokenomics-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #166534;
+            margin-bottom: 2rem;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tokenomics-card {
+            background: linear-gradient(to right, #f0fdf4, #fee2e2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .tokenomics-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #166534;
+        }
+
+        .tokenomics-label {
+            color: #991b1b;
+            font-weight: bold;
+        }
+
+        .roadmap {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+
+        .roadmap-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #166534;
+            margin-bottom: 2rem;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .roadmap-card {
+            border: 2px solid #16a34a;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .roadmap-card:nth-child(2) {
+            border-color: #dc2626;
+        }
+
+        .roadmap-phase {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-icon {
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.75;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="emoji-container">
+                <span class="emoji">🇲🇽</span>
+                <span class="emoji">👨‍🌾</span>
+                <span class="emoji">🌮</span>
+            </div>
+            <h1 class="title">$LUIS</h1>
+            <p class="subtitle">The Most Authentic Memecoin This Side of the Border!</p>
+            <div class="button-container">
+                <button class="button button-green">
+                    <i data-lucide="party-popper"></i>
+                    ¡Comprar Token!
+                </button>
+                <a href="https://x.com/LuisUWilBeBack" target="_blank" rel="noopener noreferrer">
+                    <button class="button button-red">
+                        <i data-lucide="trophy"></i>
+                        Join La Familia
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🌯</div>
+                <h3 class="feature-title">Burrito Buyback</h3>
+                <p class="feature-description">Every transaction feeds the community pool!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏃‍♂️</div>
+                <h3 class="feature-title">Ultra Fast</h3>
+                <p class="feature-description">Transactions quicker than border crossing!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚜</div>
+                <h3 class="feature-title">Farm Yield</h3>
+                <p class="feature-description">Stake $LUIS for spicy returns!</p>
+            </div>
+        </div>
+
+        <!-- Tokenomics -->
+        <div class="tokenomics">
+            <h2 class="tokenomics-title">Tokenomics, Amigos! 🌶️</h2>
+            <div class="tokenomics-grid">
+                <div class="tokenomics-card">
+                    <div class="tokenomics-value">69,420,000,000</div>
+                    <div class="tokenomics-label">Total Supply</div>
+                </div>
+                <div class="tokenomics-card">
+                    <div class="tokenomics-value">2%</div>
+                    <div class="tokenomics-label">Guacamole Tax</div>
+                </div>
+                <div class="tokenomics-card">
+                    <div class="tokenomics-value">4,200,000</div>
+                    <div class="tokenomics-label">Burned Tokens</div>
+                </div>
+                <div class="tokenomics-card">
+                    <div class="tokenomics-value">1,000+</div>
+                    <div class="tokenomics-label">Hermanos</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="roadmap">
+            <h2 class="roadmap-title">El Roadmap 🗺️</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-card">
+                    <h3 class="roadmap-phase">Phase 1: La Siembra 🌱</h3>
+                    <p>Token launch + Community building</p>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-phase">Phase 2: La Cosecha 🌾</h3>
+                    <p>NFT launch + Staking platform</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
