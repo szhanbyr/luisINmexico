@@ -241,6 +241,78 @@
                 </a>
             </div>
         </div>
+                <!-- Token Contract Address -->
+                <div class="contract-address">
+                    <h2 class="contract-title">Token Contract Address 🪙</h2>
+                    <p class="contract-description">
+                        Add the $LUIS token to your wallet by using the contract address below:
+                    </p>
+                    <div class="contract-box">
+                        <span class="contract-text">0x1234567890abcdef1234567890abcdef12345678</span>
+                        <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+                    </div>
+                </div>
+        
+                <script>
+                    function copyToClipboard() {
+                        const contractText = document.querySelector('.contract-text').innerText;
+                        navigator.clipboard.writeText(contractText).then(() => {
+                            alert('Contract address copied to clipboard!');
+                        });
+                    }
+                </script>
+        
+                <style>
+                    .contract-address {
+                        text-align: center;
+                        background-color: rgba(255, 255, 255, 0.8);
+                        padding: 2rem;
+                        border-radius: 0.75rem;
+                        margin-bottom: 4rem;
+                    }
+        
+                    .contract-title {
+                        font-size: 2.5rem;
+                        font-weight: bold;
+                        color: #166534;
+                        margin-bottom: 1rem;
+                    }
+        
+                    .contract-description {
+                        font-size: 1.25rem;
+                        color: #991b1b;
+                        margin-bottom: 1.5rem;
+                    }
+        
+                    .contract-box {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 1rem;
+                        background-color: #f0fdf4;
+                        padding: 1rem 2rem;
+                        border-radius: 0.5rem;
+                        border: 2px solid #16a34a;
+                        font-size: 1.25rem;
+                        color: #166534;
+                        font-weight: bold;
+                    }
+        
+                    .copy-button {
+                        padding: 0.5rem 1rem;
+                        background-color: #16a34a;
+                        color: white;
+                        border: none;
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+                    }
+        
+                    .copy-button:hover {
+                        background-color: #15803d;
+                    }
+                </style>
 
         <!-- Features -->
         <div class="features">
